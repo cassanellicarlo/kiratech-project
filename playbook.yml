@@ -3,4 +3,7 @@
   become: yes
   become_user: root
   roles:
-    - nginx
+    - common
+    - ome.lvm_partition
+    #- nginx
+

@@ -13,6 +13,9 @@ Vagrant.configure("2") do |config|
       ansible.playbook = "playbook.yml"
       ansible.limit = 'all'
       ansible.inventory_path = 'hosts'
+      ansible.become = true
+      ansible.galaxy_role_file = "requirements.yml"
+      ansible.galaxy_command = "sudo ansible-galaxy install --role-file=%{role_file} --roles-path=%{roles_path}"
     end
   end
 
@@ -29,6 +32,9 @@ Vagrant.configure("2") do |config|
       ansible.playbook = "playbook.yml"
       ansible.limit = 'all'
       ansible.inventory_path = 'hosts'
+      ansible.become = true
+      ansible.galaxy_role_file = "requirements.yml"
+      ansible.galaxy_command = "sudo ansible-galaxy install --role-file=%{role_file} --roles-path=%{roles_path} --force"
     end
   end    
 
