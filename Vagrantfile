@@ -34,7 +34,7 @@ Vagrant.configure("2") do |config|
       ansible.inventory_path = 'hosts'
       ansible.become = true
       ansible.galaxy_role_file = "requirements.yml"
-      ansible.galaxy_command = "sudo ansible-galaxy install --role-file=%{role_file} --roles-path=%{roles_path} --force"
+      ansible.galaxy_command = "sudo ansible-galaxy install --role-file=%{role_file} --roles-path=%{roles_path}"
     end
   end    
 

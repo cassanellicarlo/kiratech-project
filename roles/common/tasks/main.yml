@@ -1,13 +1,13 @@
 ---
-- name: Add epel-release repo
-  yum:
-    name: epel-release
-    state: present
+# - name: Add epel-release repo
+#   yum:
+#     name: epel-release
+#     state: present
 
-- name: Install lvm
-  yum:
-    name: lvm*
-    state: present
+# - name: Install lvm
+#   yum:
+#     name: lvm*
+#     state: present
 
 # - name: Create a new primary partition for LVM
 #   parted:

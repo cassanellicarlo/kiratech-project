@@ -19,10 +19,10 @@ jobs:
         # or valid Ansible directories according to the Ansible role
         # directory structure.
         # If you want to lint multiple ansible files, use the following syntax
-        # targets: |
-        #   playbook_1.yml
-        #   playbook_2.yml
-        targets: "playbook.yml"
+        targets: |
+          playbook.yml
+          roles
+        # targets: "playbook.yml"
         # [optional]
         # Arguments to override a package and its version to be set explicitly.
         # Must follow the example syntax.

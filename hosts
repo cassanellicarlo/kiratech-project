@@ -1,3 +1,2 @@
 [local]
-192.168.2.10 ansible_python_interpreter=/usr/bin/python
-192.168.2.11 ansible_python_interpreter=/usr/bin/python
+127.0.0.1 ansible_python_interpreter=/usr/bin/python
