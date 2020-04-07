@@ -5,6 +5,7 @@
   roles:
     #- common
     - docker
+    - swarm
     #- ome.lvm_partition
     #- nginx
 

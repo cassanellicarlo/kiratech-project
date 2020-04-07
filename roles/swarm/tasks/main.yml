@@ -1,0 +1,26 @@
+---
+- name: Install pip.
+  yum: 
+    name: python-pip
+    state: present
+
+- name: Install docker-py
+  pip:
+    name: docker-py
+    state: present
+
+- name: Init a new swarm setting the manager node
+  when: ansible_hostname == 'master-vm-centos'
+  docker_swarm:
+    state: present
+    advertise_addr: 192.168.2.10
+  register: swarm_return
+
+# - name: Add worker node to swarm
+#   #when: ansible_hostname == 'worker-vm-centos'
+#   docker_swarm:
+#     state: join
+#     advertise_addr: 192.168.2.11
+#     join_token: "{{ swarm_return.swarm_facts.JoinTokens.Worker }}"
+#     remote_addrs: [ '192.168.2.10:2377' ]
+#   register: result
