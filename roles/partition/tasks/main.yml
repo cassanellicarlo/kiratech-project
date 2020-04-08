@@ -1,0 +1,30 @@
+---
+- name: Add epel-release repo
+  yum:
+    name: epel-release
+    state: present
+
+- name: Install lvm
+  yum:
+    name: lvm*
+    state: present
+
+- name: Create a new primary partition for LVM
+  parted:
+    device: /dev/sdb
+    number: 1
+    flags: [ lvm ]
+    state: present
+
+- name: Create a ext4 filesystem on /dev/sdb1
+  filesystem:
+    fstype: ext4
+    dev: /dev/sdb1
+
+- name: Mount volume on /var/lib/docker
+  mount:
+    path: /var/lib/docker 
+    src: /dev/sdb1
+    #opts: bind
+    state: mounted
+    fstype: ext4

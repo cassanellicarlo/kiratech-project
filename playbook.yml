@@ -3,9 +3,6 @@
   become: yes
   become_user: root
   roles:
-    #- common
+    - partition
     - docker
     - swarm
-    #- ome.lvm_partition
-    #- nginx
-

@@ -1,9 +1,0 @@
----
-# defaults file for roles/lvm-partitions
-
-lvm_lvopts:
-lvm_vgname: centos_vg
-lvm_lvname: docker_lv
-lvm_lvmount: /var/lib/docker
-lvm_lvsize: 20000
-lvm_lvfilesystem: ext4
