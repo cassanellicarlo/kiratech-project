@@ -23,8 +23,7 @@
 
 - name: Mount volume on /var/lib/docker
   mount:
-    path: /var/lib/docker 
+    path: /var/lib/docker
     src: /dev/sdb1
-    #opts: bind
     state: mounted
     fstype: ext4
